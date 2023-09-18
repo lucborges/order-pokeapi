@@ -48,5 +48,18 @@ Outro ponto interessante, caso o total de pokémons aumente drasticamente, a ord
 ser realizada, então alterar o algoritmo de ordenação para um Merge Sort seria o mais indicado. Mas, visto que a lista
 de pokémons é pequena atualmente, o Quick Sort lida muito bem com essa ordenação.
 
+# Rodando o projeto no Docker
+O primeiro passo para rodar o projeto utilizando o Docker é gerar o jar na pasta do projeto com o comando:
+<b>./gradlew bootjar</b>
+
+Logo em seguida, rodar o comando <b>docker build -t looqbox-backend-challenge .</b>
+
+Ele irá buildar a imagem do Docker. Podemos ver a imagem gerando utilizando o comando docker images
+
+Com a imagem gerada, vamos executar ele localmente com o comando: 
+<b>docker run --network="host" looqbox-backend-challenge:latest</b>
+O parametro host é para expor a aplicação no endereço local da máquina
+<b>http://localhost:8080</b>
+
 # Autor
 - Lucas Borges Silva
