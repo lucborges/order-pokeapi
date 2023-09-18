@@ -14,7 +14,7 @@ public class PokemonApiService {
     public List<Map<String, String>> getPokemonApi() throws JsonProcessingException {
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<String> response
-                = restTemplate.getForEntity("https://pokeapi.co/api/v2/pokemon?limit=1281&offset=1", String.class);
+                = restTemplate.getForEntity("https://pokeapi.co/api/v2/pokemon?limit=1300&offset=1", String.class);
 
         String pokemonsJson = response.getBody();
 
