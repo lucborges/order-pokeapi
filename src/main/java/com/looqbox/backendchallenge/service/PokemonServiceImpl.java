@@ -28,14 +28,14 @@ public class PokemonServiceImpl implements PokemonService {
     public List getPokemons(String query, SortType sort) throws JsonProcessingException {
         if(cache.get(query).isPresent()) {
             List<String> cacheableResponse = (List<String>) cache.get(query).get();
-            String[] sortPokemonList = this.sortPokemonList(query, cacheableResponse, sort);
+            String[] sortPokemonList = sortPokemonList(query, cacheableResponse, sort);
             return Arrays.stream(sortPokemonList).toList();
         } else {
             List<String> pokemonList = pokemonApiService.getPokemonApi().stream()
                     .map(it -> it.get("name"))
                     .toList();
             cache.put(query, pokemonList);
-            String[] sortPokemonList = this.sortPokemonList(query, pokemonList, sort);
+            String[] sortPokemonList = sortPokemonList(query, pokemonList, sort);
             return Arrays.stream(sortPokemonList).toList();
         }
     }
