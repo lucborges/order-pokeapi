@@ -23,13 +23,17 @@ public class PokemonController {
     public ResponseEntity<PokemonDto> getPokemons(
             @RequestParam(required = false) String query,
             @RequestParam(required = false) SortType sort) throws IOException {
-        return ResponseEntity.ok(new PokemonDto(pokemonService.getPokemons(query.toLowerCase(), sort)));
+        return ResponseEntity.ok(
+                new PokemonDto(
+                        pokemonService.getPokemons(query != null ? query.toLowerCase() : query, sort)));
     }
 
     @GetMapping("/pokemons/highlight")
     public ResponseEntity<PokemonDto> getPokemonsHighlight(
             @RequestParam(required = false) String query,
             @RequestParam(required = false) SortType sort) throws IOException {
-        return ResponseEntity.ok(new PokemonDto(pokemonService.getPokemonsHighlight(query.toLowerCase(), sort)));
+        return ResponseEntity.ok(
+                new PokemonDto(
+                        pokemonService.getPokemonsHighlight(query != null ? query.toLowerCase() : query, sort)));
     }
 }
