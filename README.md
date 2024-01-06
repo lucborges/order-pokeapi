@@ -1,5 +1,5 @@
-<h1 align="center">Looqbox Backend Challenge</h1>
-<p align="center">Aplicação em Springboot que consome a Api externa do PokeApi
+<h1 align="center">Order PokéApi</h1>
+<p align="center">Aplicação em Springboot que consome a Api externa do PokéApi
 e retorna em forma de lista o pokémon pesquisado ou todos os pokémons</p>
 
 <h1 align="center">
