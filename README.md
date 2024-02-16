@@ -1,4 +1,4 @@
-<h1 align="center">Order PokéApi</h1>
+<h1 align="center">PokeSort API</h1>
 <p align="center">Aplicação em Springboot que consome a Api externa do PokéApi
 e retorna em forma de lista o pokémon pesquisado ou todos os pokémons</p>
 
